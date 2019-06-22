@@ -1,5 +1,28 @@
 from math import sqrt
-from time import time,localtime,sleep
+from time import time, localtime, sleep
+from abc import ABCMeta, abstractmethod
+
+
+class Pet(object, metaclass=ABCMeta):
+    def __init__(self, nickname):
+        self._nickname = nickname
+    @abstractmethod
+    def make_voice(self):
+        pass
+
+
+class Dog(Pet):
+    def make_voice(self):
+        print("wan wan")
+
+
+class Cat(Pet):
+    def make_voice(self):
+        print("meow")
+
+
+
+
 class Person(object):
     __slots__ = ("_name", "_age", "_gender", "_xx")
     def __init__(self, name, age, gender, xx):
@@ -64,6 +87,12 @@ class Clock(object):
     def now(cls):
         ctime = localtime(time())
         return cls(ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
+
+d = Dog("haha")
+d.make_voice()
+
+c = Cat("meow")
+c.make_voice()
 
 if Triangle.isValid(3, 4, 5):
     tri = Triangle(3, 4, 5)
