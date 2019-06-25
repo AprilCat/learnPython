@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import image as img
+a = np.array([[1, 3, 5], [2, 4, 6]])
+b = np.array([10, 30, 50])
+print(a)
+print(type(a))
+print(a+b)
+print(a*b)
+print(a/b)
+print(a/10)
+print(a.shape)
+print(a.dtype)
+print(a[0])
+print(a[0][2])
+for row in a:
+    for elem in row:
+        print(elem, end=",")
+    print()
+x = a.flatten()
+print(x[np.array([2, 2, 2])])
+c = np.array([12, 14, 16, 18, 20, 22, 25])
+print(c > 15)
+print(c[c > 15])
+x = np.arange(0, 6.28, 0.1)
+y1 = np.sin(x)
+y2 = np.cos(x)
+plt.plot(x, y1, linestyle="--", label="sin")
+plt.plot(x, y2, label="cos")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("sin and cos")
+plt.legend()
+plt.show()
+# matplotlib.image only support a part of png format
+# meow = img.imread("../../DJI_0001.jpg")
+# plt.imshow(meow)
