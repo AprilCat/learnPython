@@ -14,6 +14,10 @@ def ReLU(x):
     return np.maximum(0, x)
 
 
+def identical_function(x):
+    return x
+
+
 if __name__ == "__main__":
     x = np.arange(-5, 5, 0.1)
     y1 = step_function(x)
