@@ -12,3 +12,4 @@ def softmax(a):
 if __name__ == "__main__":
     a = np.array([2000, 2001, 2002])
     print(softmax(a))
+    print(np.sum(softmax(a)))
