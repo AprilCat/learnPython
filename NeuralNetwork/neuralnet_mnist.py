@@ -43,3 +43,12 @@ for i in range(len(x)):
         accuracy_cnt += 1
 print("Accuracy:%f" % (accuracy_cnt/len(x)))
 
+accuracy_cnt = 0
+batch_size = 100
+for i in range(0, len(x), batch_size):
+    x_batch = x[i:i+batch_size]
+    y_batch = predict(networtk, x_batch)
+    p = np.argmax(y_batch, axis=1)
+    accuracy_cnt += np.sum(p == t[i:i+batch_size])
+print("batch accuracy:%f" % (accuracy_cnt/len(x)))
+
